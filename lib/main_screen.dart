@@ -79,16 +79,16 @@ class _MainScreenState extends State<MainScreen> {
                             height: 15.h,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.black, width: 1.0),
-                              // image: const DecorationImage(
-                              //     fit: BoxFit.fill,
-                              //     image: AssetImage("images/card1.png")
-                              // )
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(computer[index].image)
+                              )
                             ),
-                            child: Center(
-                                child: Text(
-                              computer[index].image,
-                              style: TextStyle(fontSize: 8.sp),
-                            )),
+                            // child: Center(
+                            //     child: Text(
+                            //   computer[index].image,
+                            //   style: TextStyle(fontSize: 8.sp),
+                            // )),
                           ),
                         ),
                       );
@@ -139,19 +139,21 @@ class _MainScreenState extends State<MainScreen> {
                     height: 15.h,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black, width: 1.0),
-                      // image: DecorationImage(
-                      //     fit: BoxFit.fill,
-                      //     image: card == "images/card1.png"
-                      //         ? const AssetImage("images/card1.png")
-                      //         : card == "images/card2.png"
-                      //             ? const AssetImage("images/card2.png")
-                      //             : const AssetImage("images/card3.png"))
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(card),
+                          // card == "images/card1.png"
+                          //     ? const AssetImage("images/card1.png")
+                          //     : card == "images/card2.png"
+                          //         ? const AssetImage("images/card2.png")
+                          //         : const AssetImage("images/card3.png")
+                      )
                     ),
-                    child: Center(
-                        child: Text(
-                          card,
-                          style: TextStyle(fontSize: 8.sp),
-                        )),
+                    // child: Center(
+                    //     child: Text(
+                    //       card,
+                    //       style: TextStyle(fontSize: 8.sp),
+                    //     )),
                   ),
                 ],
               ),
@@ -183,17 +185,17 @@ class _MainScreenState extends State<MainScreen> {
                             width: 20.w,
                             height: 15.h,
                             decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: Colors.black, width: 1.0),
-                                // image: const DecorationImage(
-                                //     fit: BoxFit.fill,
-                                //     image: AssetImage("images/card2.png"))
+                                border: Border.all(color: Colors.black, width: 1.0),
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(player[index].image))
                             ),
-                            child: Center(
-                                child: Text(
-                                  player[index].image,
-                                  style: TextStyle(fontSize: 8.sp),
-                                )),
+                            // child: Center(
+                            //     child: Text(
+                            //       player[index].image,
+                            //       style: TextStyle(fontSize: 8.sp),
+                            //     )
+                            // ),
                           ),
                         ),
                       );
@@ -241,8 +243,7 @@ class _MainScreenState extends State<MainScreen> {
 }
 
 class Deck {
-  List<Card> cards =
-      []; //List creation and initialization. If not initialized, it is null
+  List<Card> cards = []; //List creation and initialization. If not initialized, it is null
   //List is same as array in JAVA. So, saying List<Card> cards essentially means an array of
   //Card objects with the array variable name as cards
   Deck() {
@@ -265,9 +266,8 @@ class Deck {
 
     for (var suit in suits) {
       for (var rank in ranks) {
-        var card = Card(rank, suit, "${rank}${suit}");
-        cards.add(
-            card); //If list not initialized, list becomes null and add() will not work
+        var card = Card(rank, suit, "images/ace_spades.png");
+        cards.add(card); //If list not initialized, list becomes null and add() will not work
       }
     }
   }
