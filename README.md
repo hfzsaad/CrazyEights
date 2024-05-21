@@ -1,6 +1,6 @@
 # crazy_eights
 
-A new Flutter project.
+This is a card game mobile app on flutter.
 
 ## Getting Started
 
